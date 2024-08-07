@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="relative-container">
+        <button (click)="closeModal()">X</button>
+    </div>
+    <h2>Results</h2>
+    <div class="flex-container">
+        <div class="points">
+            <p>{{ results().goodOnes }} good</p>
+            <p>{{ results().badOnes }} bad</p>
+        </div>
+        <div class="result">
+            <p>{{ results().percentage }}%</p>
+        </div>
+    </div>
+</div>

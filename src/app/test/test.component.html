@@ -1,0 +1,100 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <h2>Welcome to ANXI's Certification</h2>
+    <p>Please answer the following questions. Good luck.</p>
+
+    <fieldset [class.goodOne]="colors[0]" [class.badOne]="colors[0] === false">
+        <legend><strong>Question 1</strong></legend>
+        <p>What is the capital of France?</p>
+        <div class="form-control">
+            <input type="radio" formControlName="q1" id="london" value="london">
+            <label for="london">London</label>
+        </div>
+        <div class="form-control">
+            <input type="radio" formControlName="q1" id="berlin" value="berlin">
+            <label for="berlin">Berlin</label>
+        </div>
+        <div class="form-control">
+            <input type="radio" formControlName="q1" id="paris" value="paris">
+            <label for="paris">Paris</label>
+        </div>
+        <div class="form-control">
+            <input type="radio" formControlName="q1" id="madrid" value="madrid">
+            <label for="madrid">Madrid</label>
+        </div>
+    </fieldset>
+
+    <fieldset [class.goodOne]="colors[1]" [class.badOne]="colors[1] === false">
+        <legend><strong>Question 2</strong></legend>
+        <p>Who wrote "One Hundred Years of Solitude?</p>
+        <div class="form-control">
+            <input type="radio" formControlName="q2" id="gabo" value="gabo">
+            <label for="gabo">Gabriel García Márquez</label>
+        </div>
+        <div class="form-control">
+            <input type="radio" formControlName="q2" id="vargas" value="vargas">
+            <label for="vargas">Mario Vargas Llosa</label>
+        </div>
+        <div class="form-control">
+            <input type="radio" formControlName="q2" id="allende" value="allende">
+            <label for="allende">Isabel Allende</label>
+        </div>
+        <div class="form-control">
+            <input type="radio" formControlName="q2" id="borges" value="borges">
+            <label for="borges">Jorge Luis Borges</label>
+        </div>
+    </fieldset>
+
+    <fieldset [class.goodOne]="colors[2]" [class.badOne]="colors[2] === false">
+        <legend><strong>Question 3</strong></legend>
+        <p>Which gas is essential for human respiration?</p>
+        <div class="form-control">
+            <input type="radio" formControlName="q3" id="co2" value="co2">
+            <label for="co2">Carbon dioxide</label>
+        </div>
+        <div class="form-control">
+            <input type="radio" formControlName="q3" id="nitro" value="nitro">
+            <label for="nitro">Nitrogen</label>
+        </div>
+        <div class="form-control">
+            <input type="radio" formControlName="q3" id="oxygen" value="oxygen">
+            <label for="oxygen">Oxygen</label>
+        </div>
+        <div class="form-control">
+            <input type="radio" formControlName="q3" id="hydro" value="hydro">
+            <label for="hydro">Hydrogen</label>
+        </div>
+    </fieldset>
+
+    <fieldset [class.goodOne]="colors[3]" [class.badOne]="colors[3] === false">
+        <legend><strong>Question 4</strong></legend>
+        <p>Who is known as the "father of the theory of relativity"?</p>
+        <div class="form-control">
+            <input type="radio" formControlName="q4" id="newton" value="newton">
+            <label for="newton">Isaac Newton</label>
+        </div>
+        <div class="form-control">
+            <input type="radio" formControlName="q4" id="tesla" value="tesla">
+            <label for="tesla">Nikola Tesla</label>
+        </div>
+        <div class="form-control">
+            <input type="radio" formControlName="q4" id="einstein" value="einstein">
+            <label for="einstein">Albert Einstein</label>
+        </div>
+        <div class="form-control">
+            <input type="radio" formControlName="q4" id="hawking" value="hawking">
+            <label for="hawking">Stephen Hawking</label>
+        </div>
+    </fieldset>
+    <br>
+
+    @if (!onChecking) {
+    <div class="form-buttons">
+        <button type="button" (click)="onReset()">Reset</button>
+        <button type="submit" [disabled]="form.invalid">Check</button>
+    </div>
+    } @else {
+    <div class="loader"></div>
+    }
+    <br>
+    <br>
+</form>

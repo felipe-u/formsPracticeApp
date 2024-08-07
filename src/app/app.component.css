@@ -1,0 +1,42 @@
+.container {
+  display: block;
+  border: 2px solid black;
+  border-end-end-radius: 10px;
+  border-end-start-radius: 10px;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.wraper {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.3s, opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.wraper.show {
+    background-color: rgba(0, 0, 0, 0.681);
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+}
+
+.modal {
+    display: flex;
+    position: fixed;
+    top: 40%;
+    justify-content: center;
+    width: 100%;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.wraper.show .modal {
+    opacity: 1;
+    transform: scale(1);
+}
